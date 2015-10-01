@@ -33,7 +33,7 @@ body {
 }
 
 
-// Start My Styles
+// Start Home Styles
 
 video#bgvid { 
     position: fixed;
@@ -194,7 +194,7 @@ video#bgvid {
     color: white;
     font-size: 9px;
     text-transform: uppercase;
-    margin: 25px;
+    margin: 25px 0 25px;
   }
 
 }
@@ -238,3 +238,68 @@ video#bgvid {
   background-color: transparent;
 }
 
+// Interior Styles
+
+#interior-bkg { 
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    background: url(../images/interior-bkg.jpg) no-repeat;
+    background-color: black;
+    background-size: cover; 
+}
+
+.int-header {
+  margin: 5px 0 50px;
+  h1 {
+    color: white;
+    font-weight: 300;
+    text-transform: uppercase;
+    &:before {
+      content: "";
+      display: block;
+      background: url(../images/server-icon.png) no-repeat;
+      width: 44px;
+      height: 44px;
+      float: left;
+      margin: 0 15px 0 0;
+    }
+  }
+}
+
+.int-cont-main {
+  background-color: white;
+  @media (min-width: $screen-sm-min) {
+    background-color: transparent;
+  }
+}
+.int-body {
+  background-color: white;
+  padding: 50px 0;
+}
+.main-copy {
+  background: white;
+  color: #224449;
+  padding: 15px;
+  @media (min-width: $screen-sm-min) {
+    padding: 0 20px 0 50px;
+  }
+  h2 {
+    font-weight: 300;
+  }
+  h2:first-of-type {
+    margin-top: 0;
+  }
+}
+
+.cta {
+  background: black;
+  min-height: 200px;
+}
