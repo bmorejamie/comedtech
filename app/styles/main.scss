@@ -20,6 +20,7 @@ body {
   font-family: $font-base;
   .btn {
     border: 1px solid white;
+    border-radius: 0;
     color: white;
     text-transform: uppercase;
     transition: all 0.3s;
@@ -87,12 +88,13 @@ video#bgvid {
   .block {
     display: block;
     width: 100%;
-    padding: 20px;
+    padding: 40px 20px;
     overflow: hidden;
     h2 {
       text-transform: uppercase;
       margin-top: 5px;
-      font-size: 24px;
+      font-size: 23px;
+      font-weight: 600;
     }
     h3 {
       color: white;
@@ -201,44 +203,73 @@ video#bgvid {
 
 
 //nav styles
+#home {
+  .navbar {
+    margin-top: 30px;
+  }
+  .navbar-default {
+    background-color: rgba(22, 21, 22, 0);
+    border-radius: 0;
+    border-color: transparent;
+    @media (min-width: $screen-sm-min) {
+      background-color: rgba(22, 21, 22, 0); 
+    }
+    .navbar-brand {
+      color: white;
+      height: auto;
+      padding-top: 5px;
+    }
 
-.navbar {
-  margin-top: 30px;
-}
-.navbar-default {
-  background-color: rgba(22, 21, 22, 0);
-  border-radius: 0;
-  border-color: transparent;
-  @media (min-width: $screen-sm-min) {
-    background-color: rgba(22, 21, 22, 0); 
   }
-  .navbar-brand {
+  .navbar-default .navbar-nav > li > a {
     color: white;
-    height: auto;
-    padding-top: 5px;
+    text-transform: uppercase;
+    font-weight: 300;
+    &:hover {
+      color: white;
+      font-weight: 600;
+    }
   }
-
-}
-.navbar-default .navbar-nav > li > a {
-  color: white;
-  text-transform: uppercase;
-  font-weight: 300;
-  &:hover {
-    color: white;
-    background-color: rgba(22, 21, 22, .15);
+  .navbar-default .navbar-toggle {
+    border: 0;
   }
-}
-.navbar-default .navbar-toggle {
-  border: 0;
-}
-.navbar-default .navbar-toggle .icon-bar {
-  background-color: white;
-}
-.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
-  background-color: transparent;
+  .navbar-default .navbar-toggle .icon-bar {
+    background-color: white;
+  }
+  .navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+    background-color: transparent;
+  }
 }
 
 // Interior Styles
+
+#interior {
+  .navbar {
+    padding: 20px 0 30px;
+    background-color: black;
+    border-radius: 0;
+    border-bottom: 2px solid white;
+  }
+  .navbar .navbar-nav > li > a {
+    color: white;
+    text-transform: uppercase;
+    font-weight: 300;
+    &:hover {
+      color: white;
+      font-weight: 600;
+    }
+  }
+  .navbar-default .navbar-toggle {
+    border: 0;
+  }
+  .navbar-default .navbar-toggle .icon-bar {
+    background-color: white;
+  }
+  .navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+    background-color: transparent;
+  }
+}
+
 
 #interior-bkg { 
     position: fixed;
