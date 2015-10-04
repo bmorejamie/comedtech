@@ -1,0 +1,209 @@
+/*
+ *******************************************************
+ * Off Canvas Notes
+ * You will need to provide your own fallbacks for any
+ * device/browser the does not support transitions and
+ * transforms. I would suggest using the right or left
+ * property as a fallback to the transforms used.
+ *******************************************************
+ */
+
+/*
+ *******************************************************
+ * GLobals
+ *******************************************************
+ */
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/*
+ *******************************************************
+ * Container
+ *******************************************************
+ */
+
+[role="banner"],
+[role="main"] {
+  padding: 0 5%;
+}
+
+// .container {
+//   width: 100%;
+//   background: #EFEFEF;
+//   padding: .5rem 5%; /* 8/16 = .5rem */
+// }
+
+/*
+ *******************************************************
+ * Menu Triggers
+ *******************************************************
+ */
+
+/* Hide Triggers When JS is Disabled */
+.menu-close,
+#menu-trigger{
+  display: none;
+}
+
+.js .menu-close {
+  display: block;
+  color: #fff;
+  padding: 25px; /* 10/16 = .625rem */
+  width: 100%;
+  text-align: center;
+}
+
+
+/*
+ *******************************************************
+ * Media Query Small Screens
+ *******************************************************
+ */
+
+@media screen and (max-width: 40em) { /* 640/16 = 40em */
+  .header {
+    padding: 0 5%;
+  }
+
+  .js .logo {
+    background: #383636;
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    margin: 0;
+    padding: 1.25rem 5%; /* 8/16 = .5em */
+  }
+
+  .js #menu-trigger {
+    display: block;
+    position: relative;
+    color: white;
+    padding: 22px 15px 0 0;
+  }
+
+  #menu-trigger:hover {
+    cursor: pointer;
+  }
+
+  .js .navigation {
+    display: block;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    /* Off Canvas Menu Slide in Speed */
+    -webkit-transition: 0.3s -webkit-transform cubic-bezier(0,0,.58,1);
+    -moz-transition: 0.3s -moz-transform cubic-bezier(0,0,.58,1);
+    -o-transition: 0.3s -o-transform cubic-bezier(0,0,.58,1);
+    transition: 0.3s transform cubic-bezier(0,0,.58,1);
+    width: 100%;
+    overflow-y: auto;
+    z-index: 10000;
+    background: rgba(0, 0, 0, 0.8);
+    a {
+      color: white;
+      text-decoration: none;
+      font-weight: 300;
+      &:hover {
+        font-weight: 600;
+      }
+    }
+  }
+
+  /* Hide : Off Canvas Menu */
+  .js .off-canvas--hide {
+    -webkit-transform: translateX(100%);
+    -moz-transform: translateX(100%);
+    -ms-transform: translateX(100%);
+    -o-transform: translateX(100%);
+    transform: translateX(100%);
+  }
+
+  /* Show : Off Canvas Menu Class */
+  .js .off-canvas--show {
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -o-transform: translateX(0);
+    transform: translateX(0);
+  }
+
+  .navigation__link {
+    display: block;
+    text-align: center;
+    padding-left: 1.25rem; /* 20/16 = 1.25rem */
+    padding: 0.625rem 1.25rem; /* 10/16 = 0.625rem */ /* 20/16 = 1.25rem */
+  }
+
+  .js .header--fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    /* Layer Promotion for Hardware Acceleration */
+    -webkit-transform: translateZ(0);
+    -moz-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    -o-transform: translateZ(0);
+    transform: translateZ(0);
+    width: 100%;
+    z-index: 9000; /* because we dont know what is on the page and layered so setting this high pushes our menu to the front of the stack when it slides over our content. */
+    height: 100%;
+  }
+
+  .js [role="main"] {
+    padding-top: 5rem; /* 80/16 = 5rem */
+  }
+}
+
+
+@media screen and (max-width: 40.00625em) { /* 640.1/16 = 40.00625em */
+  .menu-close:hover {
+    cursor: pointer;
+  }
+}
+
+
+/*
+ *******************************************************
+ * Media Query Large Screens
+ *******************************************************
+ */
+
+@media screen and (min-width: 40.00625em) { /* 640.1/16 = 40.00625em */
+  .js .menu-close {
+    display: none;
+  }
+
+  .js #menu-trigger {
+    display: none;
+  }
+
+  .navigation {
+    display: inline-block;
+    float: right;
+    text-transform: uppercase;
+    padding-top: 22px;
+    a {
+      color: white;
+      text-decoration: none;
+      font-weight: 300;
+      padding-right: 20px;
+      &:last-child {
+        padding-right: 0;
+      }
+      &:hover {
+        color: white;
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+.nav-container {
+  margin-top: 30px;
+}
