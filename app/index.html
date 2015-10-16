@@ -26,27 +26,28 @@
     <!--[if lt IE 10]>
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-    <video autoplay loop poster="images/poster.png" id="bgvid">
-        <source src="images/SampleVideo.webm" type="video/webm">
-        <source src="images/SampleVideo.mp4" type="video/mp4">
-    </video>
-    <div id="vid-overlay"></div>
-    <div class="container nav-container">
-    <a class="navbar-brand" href="#">
-      <img src="images/logo.png" alt="">
-    </a>
-    <!-- Menu Trigger -->
-    <a href="#menu" id="menu-trigger"><span class="glyphicon glyphicon-menu-hamburger pull-right" aria-hidden="true"></span></a>
-    <!-- Nav -->
-    <nav id="menu" class="navigation off-canvas--hide" aria-hidden="false" role="navigation">
-      <span class="menu-close glyphicon glyphicon-remove" aria-hidden="true"></span>
-      <a href="#" class="navigation__link">Products</a>
-      <a href="#" class="navigation__link">Solutions</a>
-      <a href="#" class="navigation__link">About</a>
-      <a href="#" class="navigation__link">Contact</a>
-      <a href="#" class="navigation__link">Blog</a>
-    </nav>
-    </div>
+    <div class="video-wrapper">
+      <video autoplay loop poster="images/poster.jpg" id="bgvid">
+          <source src="images/ComedtechBackground.webm" type="video/webm">
+          <source src="images/ComedtechBackground.mp4" type="video/mp4">
+      </video>
+      <div id="vid-overlay"></div>
+      <div class="container nav-container">
+      <a class="navbar-brand" href="#">
+        <img src="images/logo.png" alt="">
+      </a>
+      <!-- Menu Trigger -->
+      <a href="#menu" id="menu-trigger"><span class="glyphicon glyphicon-menu-hamburger pull-right" aria-hidden="true"></span></a>
+      <!-- Nav -->
+      <nav id="menu" class="navigation off-canvas--hide" aria-hidden="false" role="navigation">
+        <span class="menu-close glyphicon glyphicon-remove" aria-hidden="true"></span>
+        <a href="#" class="navigation__link">Products</a>
+        <a href="#" class="navigation__link">Solutions</a>
+        <a href="#" class="navigation__link">About</a>
+        <a href="#" class="navigation__link">Contact</a>
+        <a href="#" class="navigation__link">Blog</a>
+      </nav>
+      </div>
 <!--        <nav class="navbar navbar-default">
          <div class="container">
            <div class="navbar-header">
@@ -61,7 +62,7 @@
            </div>
            <div id="navbar" class="navbar-collapse collapse">
              <ul class="nav navbar-nav navbar-right">
-               <li><a href="#">Home</a></li>
+               <li><a href="#">Products</a></li>
                <li><a href="#">About</a></li>
                <li><a href="interior.html">Services</a></li>
                <li><a href="#">Contact</a></li>
@@ -77,19 +78,19 @@
       <a href="#" class="btn">Customer Successes</a>
       </div>
     </div>
-
+  </div>
     <div class="featured">
       <div class="container">
         <div class="row">
-          <div class="col-sm-4"><img src="images/storage_icon.png" alt="">
+          <div class="col-sm-4 feature"><img src="images/storage_icon.png" alt="">
           <div class="text-center"><a class="btn" href="#" role="button">Storage&nbsp; ></a></div>
           <p>Back-end infrastructure for integrating, managing, and securing data of any kind, from any source, at massive scale.</p>
           </div>
-          <div class="col-sm-4"><img src="images/analytics_icon.png" alt="">
+          <div class="col-sm-4 feature"><img src="images/analytics_icon.png" alt="">
           <div class="text-center"><a class="btn" href="#" role="button">Analytics&nbsp; ></a></div>
           <p>Back-end infrastructure for integrating, managing, and securing data of any kind, from any source, at massive scale.</p>
           </div>
-          <div class="col-sm-4"><img src="images/customer_stories_icon.png" alt="">
+          <div class="col-sm-4 feature"><img src="images/customer_stories_icon.png" class="last" alt="">
           <div class="text-center"><a class="btn" href="#" role="button">Customer Stories&nbsp; ></a></div>
           <p>Back-end infrastructure for integrating, managing, and securing data of any kind, from any source, at massive scale.</p>
           </div>
@@ -127,7 +128,7 @@
     <script src="/bower_components/jquery/dist/jquery.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
-    
+
     <!-- build:js scripts/plugins.js -->
     <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/affix.js"></script>
     <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/alert.js"></script>
@@ -146,5 +147,6 @@
     <!-- build:js scripts/main.js -->
     <script src="scripts/main.js"></script>
     <!-- endbuild -->
+
   </body>
 </html>
