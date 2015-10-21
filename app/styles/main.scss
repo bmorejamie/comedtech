@@ -16,8 +16,8 @@ $font-base: 'Open Sans', sans-serif;
   padding: 0.2em 0;
 }
 
-/* Space out content a bit */
 body {
+  background-color: #edf0f2;
   font-family: $font-base;
   .btn {
     border: 1px solid white;
@@ -31,9 +31,19 @@ body {
       background-color: white;
     }
   }
-
 }
 
+.site-wrapper {
+  margin: 0 auto;
+  box-shadow: 0 0 8px rgba(0,0,0,0.3);
+  max-width: 1170px;
+  @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+    max-width: 750px;
+  }
+  @media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+    max-width: 970px;
+  }
+}
 
 // Start Home Styles
 .video-wrapper {
@@ -91,7 +101,8 @@ video#bgvid {
 // Featured Blue Band -----------------------------
 .featured {
   background-color: #69b6d6;
-  padding: 50px 0;
+  padding-top: 50px;
+  padding-bottom: 50px;
   img {
     display: block;
     margin: 25px auto 25px;
@@ -124,8 +135,6 @@ video#bgvid {
   }
 }
 
-
-
 .body-copy {
   background-color: white;
   padding-bottom: 25px;
@@ -150,13 +159,24 @@ video#bgvid {
 }
 //footer styles
 .footer {
+  background-color: #1f3c48;
   p {
     color: white;
     font-size: 14px;
     text-transform: uppercase;
     margin: 25px 0 25px;
   }
-
+  p.copyright {
+    text-align: center;
+    margin: 20px auto;
+    font-size: 12px;
+    font-weight: 300;
+  }
+  .contact {
+    @media (min-width: $screen-sm-min) {
+    margin-right: 30px;
+    }
+  }
 }
 
 .navigation-footer {
@@ -165,11 +185,15 @@ video#bgvid {
   text-align: left;
   text-transform: uppercase;
   padding-top: 22px;
+  @media (min-width: $screen-sm-min) {
+    margin-left: 30px;
+  }
   a {
     color: white;
     text-decoration: none;
     font-weight: 300;
     padding-right: 20px;
+    text-align: left;
     &:last-child {
       padding-right: 0;
     }
@@ -178,26 +202,33 @@ video#bgvid {
       font-weight: 600;
     }
   }
-  @media (max-width: $screen-sm-min) {
-    display: none;
-  }
 }
-
 
 
 //nav styles
 
   .navbar {
     padding-top: 30px;
+      .navbar-header {
+        margin-left: 15px;
+    }
   }
   .navbar-default {
+    max-width: 1170px;
+    margin: 0 auto;
     background-color: rgba(22, 21, 22, 0);
     border-radius: 0;
     border-color: transparent;
+    @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+      max-width: 750px;
+    }
+    @media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+      max-width: 970px;
+    }
     .navbar-collapse {
       border-color: transparent;
     }
-    .navbar-brand {
+    #logo.navbar-brand {
       text-indent: 9999px;
       color: white;
       margin-top: 5px;
@@ -207,6 +238,19 @@ video#bgvid {
       background: url('../images/logo.png') no-repeat;
       @media (min-width: $screen-sm-min) {
         margin-left: 0;
+      }
+    }
+    a#contact-btn {
+      border: 1px solid #69b6d6;
+      color: #69b6d6;
+      padding: 10px 18px;
+      text-transform: uppercase;
+      transition: all 0.3s;
+      &:hover,
+      &:active {
+        color: white;
+        background-color: #69b6d6;
+        font-weight: 300;
       }
     }
   }
@@ -219,6 +263,11 @@ video#bgvid {
       font-weight: 600;
     }
   }
+.navbar-right {
+  margin-right: 15px;
+  margin-left: 15px;
+}
+    
   .navbar-default .navbar-toggle {
     border: 0;
   }
@@ -232,7 +281,8 @@ video#bgvid {
     position: fixed;
     top: 0;
     width: 100%;
-    margin-top: 0;
+    max-width: 1170px;
+    margin: 0 auto;
     background-color: white;
     transition: all 300ms ease;
     li > a {
@@ -243,6 +293,12 @@ video#bgvid {
     }
     .navbar-brand {
       background: url('../images/logo-reversed.png') no-repeat;
+    }
+    @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+      max-width: 750px;
+    }
+    @media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+      max-width: 970px;
     }
 }
 #nav.nav-bkg-white {
@@ -258,6 +314,7 @@ video#bgvid {
     background: url('../images/logo-reversed.png') no-repeat;
   }
 }
+
 // Interior Styles
 
 #interior {
@@ -351,8 +408,6 @@ video#bgvid {
   background: black;
   min-height: 200px;
 }
-
-
 
 .isStuck {
   background: white;
